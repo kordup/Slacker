@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Slacker by
 888888 888888    db    8b    d8     88""Yb  dP"Yb   dP"Yb  888888 
   88   88__     dPYb   88b  d88     88__dP dP   Yb dP   Yb   88   
@@ -44,3 +45,8 @@ How To Use Slacker:
 ------------------------------------------------------------------------
 All Global Arguments Are Set Using ! - All Local Variables Are Set With #
 Tools That Can't Use Local Variables, Such As SQLMap, Will Not Use Global Variables.
+=======
+# Slacker
+
+For Lazy Penetration Testers
+>>>>>>> 5356d3efce93e8efe3df12e46f3d0df2add0990a
