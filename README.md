@@ -23,20 +23,20 @@ If you need to have errors, you may need to change this. I would recommend adjus
 
 
 How To Use Slacker: 
-#         Arguments: 
-# [!target] Set A Global Target [* Used By Default]
-#                       IE: !target yourdomain.com
-# [#target] Set A Single-Tool Use Target
-#                       IE: #target yourdomain.com
-# [#port] Set A Global Target (Where Applicable)
-#                       IE: #port 22
-# [#args] Set Custom Arguments (Where Applicable)
-#                       IE: #args -Pn -Sv
-# [#help] See What Custom Arguments Are Available For That Tool.
-#                       IE: #help
-# [!help] Show This Menu.
-#                       IE: !help
-#------------------------------------------------------------------------
+Arguments:
+[!target] Set A Global Target
+        ie: !target yourdomain.com
+[#target] Set A One-Time Local Target
+        ie: #target yourdomain.com
+[#port] Set Local Ports
+        ie: #port 22
+[#args] Set Custom Args (Where Applicable)
+        ie: #args -t -p
+[#help] Get Help From A Tool For Custom Args
+        ie: #help
+[!help] Display This Menu
+        ie: !help
+
 #All Global Arguments Are Set Using ! - All Local Variables Are Set With #
 #Tools That Can't Use Local Variables, Such As SQLMap, Will Not Use Global Variables.
 #=======
