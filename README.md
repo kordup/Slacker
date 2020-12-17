@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 Slacker by
 888888 888888    db    8b    d8     88""Yb  dP"Yb   dP"Yb  888888 
   88   88__     dPYb   88b  d88     88__dP dP   Yb dP   Yb   88   
