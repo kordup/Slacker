@@ -1,37 +1,60 @@
 import os 
 import sys
 import re
+import time
 import nmap
 import masscan
 import nikto
 import linecache
 from clear import clear
-from logo import logo, BC
+from logo import *
 
 
 #### Add custom args to nmap
 def menu():
     clear()
     logo()
-    m2 = print("Vuln Scanners")
-    mitems = ("Nmap", "Nikto", "Masscan", "Social Engineering Tool Kit")
+    mi = print("Vuln Scanners")
+    """Social Engineering Tool Kit"""
+    mitems = ("Nmap", "Nikto", "Masscan")
     for idx, i in enumerate(mitems, start=1):
         print( BC.G + " [" + BC.F + str(idx) + BC.G + "] " + i)
     else:
         print("------------------------------------------")
         print(" [" + BC.F + "*" + BC.G + "] Main Menu")
         print(" [" + BC.F + "0" + BC.G + "] Exit")
-        m2 = input("")
-    if m2 == "1":
+        mi = input("")
+    mp = mi[:7]
+    mo = mi[8:]
+    np = mi[:5]
+    no = mi[6:]
+    if mi == "1":
         nmap.start()
         clear()
-    elif m2 == "2":
+    elif mi == "2":
         nikto.start()
         clear()
-    elif m2 == "3":
+    elif mi == "3":
         masscan.start()
         clear()
-    elif m2 == "*":
+    elif mi == "*":
+        clear()
         quit
-    elif m2 == "0":
+    elif mi == "0":
         sys.exit()()
+    elif mp == "!target":
+        with open('globalt.py', 'w') as f:
+            f.write('target = "' + mo + '"')
+        globalt.target = mo
+        target = mo
+        menu()
+    elif np == "!help" or mi == "**":
+        clear()
+        helpm()
+        input("Press Enter To Continue...")
+        menu()
+    else:
+        clear()
+        print("WHELP! That didn't quite work...")
+        time.sleep(1)
+        menu()

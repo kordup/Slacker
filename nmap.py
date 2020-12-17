@@ -5,15 +5,14 @@ import time
 import linecache
 import vulnscans
 from clear import clear
-from logo import logo, BC
+from logo import *
 
 def start():    
     with open('nmap/customArgs.py') as f:
         global customArgs
         customArgs = f.read()
-    with open('nmap/target.py') as f:
         global target
-        target = f.read()
+    target = globalt.target
     clear()
     menu()
     
@@ -22,61 +21,93 @@ def menu():
     logo()
     global customArgs
     global target
-    m2 = print("Current Target: [" + BC.F + target + BC.G + "]")
-    m2 = print("Custom Arguments: [" + BC.F + customArgs + BC.G + "]")
-    mitems = ("Set Target", "Quick Port Scan", "Deep Port Scan", "System Info Scan", "Known Vuln Scan", "Run With Just Custom Arguments", "Custom Arguments", "Clear Arguments")
-    for idx, i in enumerate(mitems, start=1):
-        print( BC.G + " [" + BC.F + str(idx) + BC.G + "] " + i)
-    else:
-        print("------------------------------------------")
-        print(" [" + BC.F + "!" + BC.G + "] Vuln Scan Menu")
-        print(" [" + BC.F + "*" + BC.G + "] Main Menu")
-        print(" [" + BC.F + "0" + BC.G + "] Exit")
-        m2 = input("")
-    if m2 == "1":
+    mi = print("Current Target: [" + BC.F + target + BC.G + "]")
+    mi = print("Custom Arguments: [" + BC.F + customArgs + BC.G + "]")
+    mitems("Set Target", "Quick Port Scan", "Deep Port Scan", "System Info Scan", "Known Vuln Scan", "Run With Just Custom Arguments", "Custom Arguments", "Clear Arguments")
+    mi = input("")
+    mp = mi[:7]
+    mo = mi[8:]
+    np = mi[:5]
+    no = mi[6:]
+    na = mi[6:]
+    if mi == "1":
         clear()
         target = input("Enter A Target: ")
         with open('nmap/target.py', 'w') as f:
             f.write(target)
         clear()
         menu()
-    elif m2 == "2":
+    elif mi == "2":
         clear()
         os.system('nmap --top-ports 20 ' + target + customArgs)
         menu()
         #clear()
-    elif m2 == "3":
+    elif mi == "3":
         clear()
         os.system('sudo nmap -v -sS -sV ' + target + customArgs)
         menu()
-    elif m2 == "4":
+    elif mi == "4":
         clear()
         os.system('sudo nmap -O ' + target + customArgs)
         menu()
-    elif m2 == "5":
+    elif mi == "5":
         clear()
         os.system('nmap -Pn --script vuln ' + target + customArgs)
         menu()
-    elif m2 == "6":
+    elif mi == "6":
         clear()
         os.system('sudo nmap ' + target + ' ' + customArgs)
         menu()
-    elif m2 == "7":
+    elif mi == "7":
         os.system('nmap -h')
         customArgs = input("Enter Arguments: ")
         with open('nmap/customArgs.py', 'w') as f:
             f.write(' ' + customArgs)
         clear()
         menu()
-    elif m2 == "8":
+    elif mi == "8":
         with open('nmap/customArgs.py', 'w') as f:
             f.write('')
         clear()
         customArgs = ""
         menu()
-    elif m2 == "!":
+    elif mi == "!":
         vulnscans.menu()
-    elif m2 == "*":
+    elif mi == "*":
         quit
-    elif m2 == "0":
+    elif mi == "0":
         sys.exit()()
+    elif mp == "!target":
+        with open('globalt.py', 'w') as f:
+            f.write('target = "' + mo + '"')
+        globalt.target = mo
+        target = mo
+        clear()
+        menu()
+    elif mp == "#target":
+        target = mo
+        clear()
+        menu()
+    elif np == "#help":
+        os.system( sqlmapdir + ' -h' )
+        menu()
+    elif np == "!help" or mi == "**":
+        clear()
+        helpm()
+        menu()
+    elif np == "#args":
+        with open('nmap/customArgs.py', 'w') as f:
+            f.write(no)
+        customArgs = no
+        clear()
+        menu()
+    elif np == "#port":
+        ports = no
+        clear()
+        menu()
+    else:
+        clear()
+        print("WHELP! That didn't quite work...")
+        time.sleep(1)
+        menu()
+        

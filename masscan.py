@@ -5,7 +5,7 @@ import time
 import vulnscans
 import linecache
 from clear import clear
-from logo import logo, BC
+from logo import *
 
 def start():    
     with open('masscan/customArgs.py') as f:
@@ -17,74 +17,103 @@ def start():
     with open('masscan/ports.py') as f:
         global ports
         ports = f.read()
+    with open('masscan/masscandir.py', 'r') as f:
+        global path
+        path = f.read()
     clear()
     menu()
     
 
 def menu():
-    logo()
+    logo2()
     global customArgs
     global target
     global ports
-    m2 = print("Current Block: [" + BC.F + target + BC.G + "]")
-    m2 = print("Port(s): [" + BC.F + ports[2:] + BC.G + "]")
-    m2 = print("Custom Arguments: [" + BC.F + customArgs + BC.G + "]")
-    mitems = ("Set Target", "Set Port(s)", "Clear Ports", "Custom Arguments", "Clear Arguments", "Scan")
-    for idx, i in enumerate(mitems, start=1):
-        print( BC.G + " [" + BC.F + str(idx) + BC.G + "] " + i)
-    else:
-        print("------------------------------------------")
-        print(" [" + BC.F + "!" + BC.G + "] Vuln Scan Menu")
-        print(" [" + BC.F + "*" + BC.G + "] Main Menu")
-        print(" [" + BC.F + "0" + BC.G + "] Exit")
-        m2 = input("")
-    if m2 == "1":
-        clear()
-        print("IE: 127.0.0.0/8")
-        target = input("Enter a Target: ")
-        with open('masscan/target.py', 'w') as f:
-            f.write(target)
-        with open('masscan/target.py') as f:
-            target = f.read()
-        clear()
-        menu()
-    elif m2 == "2":
-        clear()
-        print("NOTE: You may add multiple ports with ' - ' and/or ' , '")
-        print("IE: 80,800-1000")
-        ports = input("Enter Port(s): ")
-        with open('masscan/ports.py', 'w') as f:
-            f.write('-p' + ports)            
-        with open('masscan/ports.py') as f:
-            ports = f.read()
-        menu()
-        #clear()
-    elif m2 == "3":
+    global path
+    mi = print("Current Block: [" + BC.F + target + BC.G + "]" + BC.F + "       * Global Target Does Not Apply" + BC.G)
+    mi = print("Port(s): [" + BC.F + ports[2:] + BC.G + "]")
+    mi = print("Custom Arguments: [" + BC.F + customArgs + BC.G + "]")
+    mitems("Clear Ports", "Clear Arguments", "Custom Path", "Scan")
+    mi = input("")
+    mp = mi[:7]
+    mo = mi[8:]
+    np = mi[:5]
+    np2 = mi[5:]
+    no = mi[7:]
+    na = mi[6:]
+    if mi == "1":
         clear()
         with open('masscan/ports.py', 'w') as f:
             f.write("")
             ports = ""
         menu()        
-    elif m2 == "4":
-        os.system('masscan -h')
-        customArgs = input("Enter Arguments: ")
-        with open('masscan/customArgs.py', 'w') as f:
-            f.write(' ' + customArgs)
-        clear()
-        menu()
-    elif m2 == "5":
+    elif mi == "2":
         clear()
         with open('masscan/customArgs.py', 'w') as f:
             f.write("")
             customArgs = ""
         menu()        
-    elif m2 == "6":
-        os.system('sudo masscan %s %s %s' % (target, ports, customArgs))
+    elif mi == "3":
+        clear()
+        logo2()
+        print("Example Paths: " + BC.F + "/usr/bin/masscan")
+        print("               C:/Program Files/SQLMap/masscan" + BC.G)
+        print("Note: If you have to launch sqlmap using 'python' please add it before the path.")
+        print("")
+        path = input("Enter your Masscan file path: ")
+        with open('masscan/masscandir.py', 'w') as f:
+            f.write(path)
+        clear()
         menu()
-    elif m2 == "!":
+    elif mi == "4":
+        os.system('sudo ' + str(path) + ' %s %s %s' % (ports, target, customArgs))
+        menu()
+    elif mi == "!":
         clear()
         vulnscans.menu()
-    elif m2 == "*":
+    elif mi == "*":
         quit
-    elif m2 == "0":
+    elif mi == "0":
         sys.exit()()
+    elif mp == "!target":
+        print(mp)
+        print(mo)
+        with open('masscan/target.py', 'w') as f:
+            f.write(mo)
+        target = mo
+        clear()
+        menu()
+    elif mp == "#target":
+        print(mp)
+        print(mo)
+        target = mo
+        clear()
+        menu()
+    elif np == "#port":
+        no = ('-p' + no)
+        with open('masscan/ports.py', 'w') as f:
+            f.write(no)
+        ports = no
+        clear()
+        menu()
+    elif np == "#args":
+        clear()
+        with open('masscan/customArgs.py', 'w') as f:
+            f.write(na)
+        customArgs = na
+        clear()
+        menu()
+    elif np == "#help":
+        os.system( path + ' --help' )
+        input("Press Enter To Continue...")
+        menu()
+    elif np == "!help" or mi == "**":
+        clear()
+        helpm()
+        input("Press Enter To Continue...")
+        menu()
+    else:
+        clear()
+        print("WHELP! That didn't quite work...")
+        time.sleep(1)
+        menu()

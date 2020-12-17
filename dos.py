@@ -1,36 +1,54 @@
 import os 
 import sys
 import re
+import time
 import linecache
+import globalt
+import torshammer
+import hulk
+import vulnscans
 from clear import clear
-from logo import logo, BC
+from logo import *
 
+def start(): 
+    global target
+    target = globalt.target
+    clear()
+    menu()
+    
 
 def menu():
-    clear()
     logo()
-    m4 = print("Denial of Service")
-    mitems = ("TorsHammer", "KingKor", "SYN Flooder", "The Hulk")
-    for idx, i in enumerate(mitems, start=1):
-        print( BC.G + " [" + BC.F + str(idx) + BC.G + "] " + i)
-    else:
-        print("------------------------------------------")
-        print(" [" + BC.F + "*" + BC.G + "] Main Menu")
-        print(" [" + BC.F + "0" + BC.G + "] Exit")
-        m4 = input("")
-    if m4 == "1":
+    global target
+    mitems2("TorsHammer", "The Hulk")
+    mi = input("")
+    mp = mi[:7]
+    mo = mi[8:]
+    np = mi[:5]
+    no = mi[6:]
+    if mi == "1":
+        torshammer.start()
+    elif mi == "2":
+        hulk.start()
+    elif mi == "*":
         clear()
-        print("I am one")
-        menu()
-    elif m4 == "2":
-        clear()
-        print("I am Two")
-        menu()
-    elif m4 == "3":
-        clear()
-        print("I am Three")
-        menu()
-    elif m4 == "*":
         quit
-    elif m4 == "0":
-        sys.exit()
+    elif mi == "0":
+        sys.exit()()
+    elif mp == "!target":
+        with open('globalt.py', 'w') as f:
+            f.write('target = "' + mo + '"')
+        globalt.target = mo
+        target = mo
+        clear()
+        menu()
+    elif np == "!help" or mi == "**":
+        clear()
+        helpm()
+        input("Press Enter To Continue...")
+        menu()
+    else:
+        clear()
+        print("WHELP! That didn't quite work...")
+        time.sleep(1)
+        menu()

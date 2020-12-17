@@ -1,9 +1,10 @@
 import os
 import sys
+import time
 import re
 import linecache
 from clear import clear
-from logo import logo, BC
+from logo import *
 
 
 def start():    
@@ -32,7 +33,7 @@ def scan():
         menu()
 
 def scanned():
-    os.system ( sqlmapdir + target + ' --dbs --tables --random-agent --batch %s %s ' % (customArgs, )) 
+    os.system ( sqlmapdir + target + ' --dbs --tables --random-agent --batch %s %s ' % (customArgs)) 
     columns = input("Check for Columns in a table? [y/n/back] : ")
     if str(columns) == "y" or str(columns) == "Y":
         global table
@@ -51,71 +52,42 @@ def scanned():
     elif str(columns) == "back" or str(columns) == "BACK":
         scanned(a)
 
-
-def start():
-    with open('sql/customArgs.py') as f:
-        global customArgs
-        customArgs = f.read()
-        f.close()
-    with open('sql/target.py') as f:
-        global target
-        target = f.read()
-        f.close()
-    clear()
-    menu()
-    
     
 def menu():
-    logo()
+    logo2()
     global customArgs
     global target
-    m6 = print("Current Target: " + target)
-    m6 = print("Custom Args: " + customArgs)
-    m6 = print("SQLMap Options")
-    mitems = ("Dork Scanner", "Set Target", "Init Scan", "Custom Arguments", "Clear Arguments", "Custom Path To SQLMap")
-    for idx, i in enumerate(mitems, start=1):
-        print( BC.G + " [" + BC.F + str(idx) + BC.G + "] " + i)
-    else:
-        print("------------------------------------------")
-        print(" [" + BC.F + "*" + BC.G + "] Main Menu")
-        print(" [" + BC.F + "0" + BC.G + "] Exit")
-    m6 = input("")
-    if m6 == "1":
+    global sqlmapdir
+    mi = print("Current Target: " + target + BC.F + "     * Global Target Does Not Apply" + BC.G)
+    mi = print("Custom Args: " + customArgs)
+    mi = print("SQLMap Options")
+    mitems2("Dork Scanner", "Init Scan", "Clear Arguments", "Custom Path To SQLMap")
+    mi = input("")
+    mp = mi[:7]
+    mo = mi[8:]
+    np = mi[:5]
+    no = mi[6:]
+    if mi == "1":
         clear()
-        logo()
+        logo2()
         os.system("./sql.sh")
         menu()
-    elif m6 == "2":
+    elif mi == "2":
         clear()
-        logo()
-        target = input("Set Target: ")
-        with open('sql/target.py', 'w') as f:
-            f.write(target)
-        clear()
-        menu()
-    elif m6 == "3":
-        clear()
-        logo()
+        logo2()
         scan()
         clear()
         menu()
-    elif m6 == "4":
-        os.system( sqlmapdir + ' -h')
-        customArgs = input("Enter Arguments: ")
-        with open('sql/customArgs.py', 'w') as f:
-            f.write(customArgs)
-        clear()
-        menu()
-    elif m6 == "5":
+    elif mi == "3":
         with open('sql/customArgs.py', 'w') as f:
             f.write("")
         f.close()
         customArgs = ""
         clear()
         menu()
-    elif m6 == "6":
+    elif mi == "4":
         clear()
-        logo()
+        logo2()
         print("Example Paths: " + BC.F + "/usr/bin/sqlmap")
         print("               C:/Program Files/SQLMap/sqlmap.py" + BC.G)
         print("Note: If you have to launch sqlmap using 'python' please add it before the path.")
@@ -125,7 +97,39 @@ def menu():
             f.write(sqlmapdir)
         clear()
         menu()
-    elif m6 == "*":
+    elif mi == "*":
+        clear()
         exit
-    elif m6 == "0":
+    elif mi == "0":
         sys.exit()
+    elif mp == "!target":
+        with open('sql/target.py', 'w') as f:
+            f.write(mo)
+        target = mo
+        clear()
+        menu()
+    elif mp == "#target":
+        target = mo
+        clear()
+        menu()
+    elif np == "#args":
+        with open('sql/customArgs.py', 'w') as f:
+            f.write(no)
+        customArgs = no
+        clear()
+        menu()
+    elif np == "#help":
+        clear()
+        os.system( sqlmapdir + ' -h' )
+        input("Press Enter To Continue...")
+        menu()
+    elif np == "!help" or mi == "**":
+        clear()
+        helpm()
+        input("Press Enter To Continue...")
+        menu()
+    else:
+        clear()
+        print("WHELP! That didn't quite work...")
+        time.sleep(1)
+        menu()

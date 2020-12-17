@@ -4,7 +4,7 @@ import re
 import time
 import linecache
 from clear import clear
-from logo import logo, BC
+from logo import *
 
 def start():
     global msfconsole
@@ -41,7 +41,7 @@ def oute():
         _lines = f.read().splitlines()
         print(_lines)
     clear()
-    logo()
+    logo2()
     print("")
     print("Old metasploit host data: \n" + '\n'.join(_lines))
     print("")
@@ -89,7 +89,7 @@ def menu():
     global msfconsole
     global msfdb
     global msfupdate
-    logo()
+    logo2()
     mitems = (" Exploits", " Payloads", " Set Values", " Print Current Metasploit Host Data", " Run/Exploit", " Msfdb Init", " Msfdb Delete and Init *May Help If Errors*", " Delete Host File and Renew", " Update Exploit/Payload List", "Custom File Paths")
     for idx, i in enumerate(mitems, start=1):
         print( BC.G + " [" + BC.F + str(idx) + BC.G + "] " + i)
@@ -100,7 +100,7 @@ def menu():
         m7 = input("")
     if m7 == "1":
         clear()
-        logo()
+        logo2()
         e7 = print(" [" + BC.F + "1" + BC.G + "] Search For An Exploit")
         e7 = print(" [" + BC.F + "2" + BC.G + "] Set Exploit")
         e7 = input("")
@@ -129,9 +129,9 @@ def menu():
                 exploit(expl1)
         clear()
         menu()
-    if m7 == "2":
+    elif m7 == "2":
         clear()
-        logo()
+        logo2()
         p7 = print(" [" + BC.F + "1" + BC.G + "] Search For A Payload")
         p7 = print(" [" + BC.F + "2" + BC.G + "] Set Payload")
         p7 = input("")
@@ -157,9 +157,9 @@ def menu():
                 payload(payl)
         clear()
         menu()
-    if m7 == "3":
+    elif m7 == "3":
         clear()
-        logo()
+        logo2()
         global _lines
         oute()
         rhost = input("RHOST: ")
@@ -186,31 +186,31 @@ def menu():
                 f.write('\n')
         clear()
         start()
-    if m7 == "4":
+    elif m7 == "4":
         clear()
         print(BC.F + "Current Metasploit Host Data: \n" + BC.G + ''.join(_lines))
         print("")
         menu()
-    if m7 == "5":
+    elif m7 == "5":
         os.system ( msfconsole + ' -r ./metasploit/meta.py' )
         menu()
-    if m7 == "6":
+    elif m7 == "6":
         clear()
         os.system ( msfdb + ' init' )
         menu()
-    if m7 == "7":
+    elif m7 == "7":
         clear()
         os.system ( msfdb + ' delete' )
         os.system ( msfdb + ' init' )
         menu()
-    if m7 == "8":
+    elif m7 == "8":
         with open('metasploit/meta.py', 'w') as f:
             f.write("")
         clear()
         menu()
-    if m7 == "9":
+    elif m7 == "9":
         clear()
-        logo()
+        logo2()
         print("")
         print("Updating Metasploit Exploits and Payloads...")
         print("This Will Take Several Minutes.")
@@ -226,7 +226,7 @@ def menu():
         print("")
         print("Complete!")
         menu()
-    if m7 == "10":
+    elif m7 == "10":
         msfconsole = input("Enter The Path To msfconsole: ")
         with open('metasploit/msfconsole.py', 'w') as f:
             msfconsole = f.write(msfconsole)
@@ -238,7 +238,12 @@ def menu():
             msfupdate = f.write(msfupdate)
         clear()
         start()
-    if m7 == "*":
+    elif m7 == "*":
         quit
     elif m7 == "0":
         sys.exit()
+    else:
+        clear()
+        print("WHELP! That didn't quite work...")
+        time.sleep(1)
+        menu()

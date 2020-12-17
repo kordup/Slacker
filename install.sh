@@ -175,6 +175,10 @@ sudo $i -y nmap
 sudo snap install noip-client
 sudo $i -y tor
 sudo $i -y postgresql
+sudo $i -y Nikto
+sudo $i -y Masscan
+sudo $i -y Hashcat
+sudo pip install droopescan wpscan
 
 
 

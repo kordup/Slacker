@@ -1,40 +1,61 @@
 import os 
 import sys
 import re
+import time
 import linecache
+import globalt
+import vulnscans
 from clear import clear
-from logo import logo, BC
+from logo import *
 
+def start(): 
+    global target
+    target = globalt.target
+    clear()
+    menu()
+    
 
 def menu():
-    clear()
     logo()
-    m5 = print("CMS Check and Vuln Checkers")
-    mitems = ("JoomScan", "WPScan", "DroopalScan", "CMSTool for auto CMS Check/Vuln Scan")
-    for idx, i in enumerate(mitems, start=1):
-        print( BC.G + " [" + BC.F + str(idx) + BC.G + "] " + i)
-    else:
-        print("------------------------------------------")
-        print(" [" + BC.F + "*" + BC.G + "] Main Menu")
-        print(" [" + BC.F + "0" + BC.G + "] Exit")
-        m5 = input("")
-    if m5 == "1":
-        clear()
-        print("I am one")
+    global target
+    print("Current Target: " + target)
+    mitems2("JoomScan", "WPScan", "DroopeScan")
+    mi = input("")
+    mp = mi[:7]
+    mo = mi[8:]
+    np = mi[:5]
+    no = mi[6:]
+    if mi == "1":
+        os.system("perl joomscan/joomscan.pl -u " + target)
         menu()
-    elif m5 == "2":
-        clear()
-        print("I am Two")
+    elif mi == "2":
+        os.system("wpscan --ignore-main-redirect --url " + target)
         menu()
-    elif m5 == "3":
-        clear()
-        print("I am Three")
+    elif mi == "3":
+        os.system("droopescan scan drupal --url " + target)
         menu()
-    elif m5 == "4":
+    elif mi == "*":
         clear()
-        print("I am Four")
-        menu()
-    elif m5 == "*":
         quit
-    elif m5 == "0":
-        sys.exit()
+    elif mi == "0":
+        sys.exit()()
+    elif mp == "!target":
+        with open('globalt.py', 'w') as f:
+            f.write('target = "' + mo + '"')
+        globalt.target = mo
+        target = mo
+        clear()
+    elif mp == "#target":
+        target = mo
+        clear()
+        menu()
+    elif np == "!help" or mi == "**":
+        clear()
+        helpm()
+        input("Press Enter To Continue...")
+        menu()
+    else:
+        clear()
+        print("WHELP! That didn't quite work...")
+        time.sleep(1)
+        menu()
