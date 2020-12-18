@@ -56,7 +56,7 @@ Arguments:
 ```
 ~~~
 All Global Arguments Are Set Using ! - All Local Variables Are Set With #
-Tools That Can't Use Local Variables, Such As SQLMap, Will Not Use Global Variables.
+Tools That Can Not Use Global Variables, Such As SQLMap, Will Not Use Global Variables.
 ~~~
 =======
 Slacker
