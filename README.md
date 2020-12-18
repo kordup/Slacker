@@ -1,8 +1,5 @@
 # Slacker By Team R00T
 > A Tool To Make Your Lazy Ass Useful
-[![NPM Version][npm-image]][npm-url]
-[![Build Status][travis-image]][travis-url]
-[![Downloads Stats][npm-downloads]][npm-url]
 
 Slacker is a combination of hacking tools with global variables. Slacker does a lot of the work for you - making hacking easier, quicker, and more efficient. Version .5 because the toolset is yet to be complete! Feel free to drop some constructive critisism/tool requests.
 
