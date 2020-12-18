@@ -17,7 +17,8 @@ then launch slacker.py.
 ```
 sudo chmod +x install.sh && ./install.sh
 echo "alias slacker='python3 ~/Slacker/slacker.py'" >> ~/.bash_aliases
-python3 slacker.py
+source ~/.bash_aliases
+slacker
 ```
 
 Windows:
