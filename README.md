@@ -31,8 +31,6 @@ wget linux.distros kthx
 
 How To Use Slacker: 
 
-Arguments:
-
 !target Set A Global Target
 ```
 !target yourdomain.com
