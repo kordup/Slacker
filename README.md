@@ -31,27 +31,27 @@ wget linux.distros kthx
 
 How To Use Slacker: 
 
-!target Set A Global Target
+!target - Set A Global Target
 ```
 !target yourdomain.com
 ```
-\#target Set A One-Time Local Target
+\#target - Set A One-Time Local Target
 ```
 #target yourdomain.com
 ```
-\#port Set Local Ports
+\#port - Set Local Ports
 ```
 #port 22
 ```
-\#args Set Custom Args (Where Applicable)
+\#args - Set Custom Args (Where Applicable)
 ```
 #args -t -p
 ```
-\#help Get Help From A Tool For Custom Args
+\#help - Get Help From A Tool For Custom Args
 ```
 #help
 ```
-!help Display This Menu
+!help - Display This Menu
 ```
 !help
 ```
