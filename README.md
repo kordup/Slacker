@@ -30,6 +30,7 @@ wget linux.distros kthx
 ## Usage example
 
 How To Use Slacker: 
+
 Arguments:
 !target Set A Global Target
 ```
