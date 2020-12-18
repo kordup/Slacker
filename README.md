@@ -14,11 +14,11 @@ OS X & Linux:
 
 Run install.sh to install *MOST* of the tools used in this tool. 
 then launch slacker.py.
-'''
+```
 sudo chmod +x install.sh && ./install.sh
 echo "alias slacker='python3 ~/Slacker/slacker.py'" >> ~/.bash_aliases
 python3 slacker.py
-'''
+```
 
 Windows:
 
@@ -31,29 +31,29 @@ wget linux.distros kthx
 How To Use Slacker: 
 Arguments:
 !target Set A Global Target
-'''
+```
 ie: !target yourdomain.com
-'''
+```
 \#target Set A One-Time Local Target
-'''
+```
 ie: #target yourdomain.com
-'''
+```
 \#port Set Local Ports
-'''
+```
 ie: #port 22
-'''
+```
 \#args Set Custom Args (Where Applicable)
-'''
+```
 ie: #args -t -p
-'''
+```
 \#help Get Help From A Tool For Custom Args
-'''
+```
 ie: #help
-'''
+```
 !help Display This Menu
-'''
+```
 ie: !help
-'''
+```
 
 
 #Slacker by Team R00T | Korrup
