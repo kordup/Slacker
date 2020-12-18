@@ -1,7 +1,7 @@
 # Slacker By Team R00T
 > A Tool To Make Your Lazy Ass Useful
 
-Slacker is a combination of hacking tools with global variables. Slacker does a lot of the work for you - making hacking easier, quicker, and more efficient. Version .5 because the toolset is yet to be complete! Feel free to drop some constructive critisism/tool requests.
+Slacker is a combination of other hacking tools, utilizing global variables - providing quicker tool navigation. Slacker does a lot of the work for you - making hacking easier, quicker, and more efficient. This is Version .5 because the toolset is yet to be complete! Feel free to drop some constructive critisism/tool requests.
 
 NOTE: 
 I am not responsible for any illegal activity you do with this tool.
