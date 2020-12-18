@@ -32,27 +32,27 @@ How To Use Slacker:
 Arguments:
 !target Set A Global Target
 '''
-        ie: !target yourdomain.com
+ie: !target yourdomain.com
 '''
 \#target Set A One-Time Local Target
 '''
-        ie: #target yourdomain.com
+ie: #target yourdomain.com
 '''
 \#port Set Local Ports
 '''
-        ie: #port 22
+ie: #port 22
 '''
 \#args Set Custom Args (Where Applicable)
 '''
-        ie: #args -t -p
+ie: #args -t -p
 '''
 \#help Get Help From A Tool For Custom Args
 '''
-        ie: #help
+ie: #help
 '''
 !help Display This Menu
 '''
-        ie: !help
+ie: !help
 '''
 
 
