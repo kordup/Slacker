@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 import os 
 from clear import clear
 from logo import *
@@ -15,6 +17,7 @@ import metasploit
 
         
 ### TODO: 
+######### Tools To Add: HashCat, Dir Tools, Admin Finder, FPing, IPGeolocation
 ######### Finish Menu's For DirFinders, new DoS tools, HashCat
 ######### Add Dir Tools, Admin Finder
 ######### Add Comments

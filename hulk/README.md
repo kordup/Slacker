@@ -1,42 +1,63 @@
-Hulk DoS tool
-=============
+# Slacker By Team R00T
+> A Tool To Make Your Lazy Ass Useful
 
-HULK DoS tool ported to Go language from Python. 
-Original Python utility by Barry Shteiman http://www.sectorix.com/2012/05/17/hulk-web-server-dos-tool/
-I just ported the code as is quick and dirty. Original functions names are keeped and original logic mostly keeped too.
+Slacker is a combination of other hacking tools, utilizing global variables - providing quicker tool navigation. Slacker does a lot of the work for you - making hacking easier, quicker, and more efficient. This is Version .5 because the toolset is yet to be complete! Feel free to drop some constructive critisism/tool requests.
 
-The main difference from Python version layed in Golang architecture for concurrency: the goroutines. hulk.py runs
-a new thread for each connection in the connection pool so it uses hundreds and thousands of threads. 
-hulk.go just uses lightweight goroutines that used only tens of threads (commonly golang runtime started one thread for
-CPU core + several service threads). This architecture allows golang version better consume resources and got much higher 
-connection pool on the same hardware than Python version can.
+NOTE: 
+I am not responsible for any illegal activity you do with this tool.
+This tool is for educational purposes only.
 
-This tool targeted for stress testing and may really down badly configured server or badly made app. Use it carefully.
 
-Examples:
+## Installation
 
-    $ hulk -site http://example.com/test/ 2>/dev/null
+OS X & Linux:
 
-    $ HULKMAXPROCS=4096 hulk -site http://example.com 2>/tmp/errlog
+Run install.sh to install *MOST* of the tools used in this tool. 
+then launch slacker.py.
+```
+sudo chmod +x install.sh && ./install.sh
+echo "alias slacker='python3 ~/Slacker/slacker.py'" >> ~/.bash_aliases
+python3 slacker.py
+```
 
-Useful environment vars:
+Windows:
 
-* GOMAXPROCS
-  Set it to number of your CPUs or higher (no more actual for latest golang versions).
-* HULKMAXPROCS
-  Limit the connection pool (1024 by default).
+```
+wget linux.distros kthx
+```
 
-More details: http://old.siberian.laika.name/node/7 
+## Usage example
 
-Update: well, I created this utility for one time task when I only played a bit with golang. Surprisingly I found that
-this utility used by other people, got some stars on github and even included in [BlackArch Linux distro](http://blackarch.org/dos.html). So I cleaned up code a bit.
-
-License
+How To Use Slacker: 
+Arguments:
+!target Set A Global Target
+```
+!target yourdomain.com
+```
+\#target Set A One-Time Local Target
+```
+#target yourdomain.com
+```
+\#port Set Local Ports
+```
+#port 22
+```
+\#args Set Custom Args (Where Applicable)
+```
+#args -t -p
+```
+\#help Get Help From A Tool For Custom Args
+```
+#help
+```
+!help Display This Menu
+```
+!help
+```
+~~~
+All Global Arguments Are Set Using ! - All Local Variables Are Set With #
+Tools That Can Not Use Global Variables, Such As SQLMap, Will Not Use Global Variables.
+~~~
 =======
-
-I think it may be public domain because of it is just simple and short piece of code but for reason I don't remember already
-I have choose GPL for it. Okey. So, Go version of HULK licensed under GPLv3. See LICENSE.
-
-I am not related with original HULK utility in Python. Original HULK utility is authority of Barry Shteiman (http://sectorix.com). There are not any references to license in the original source then it is not under GPL. Ask author of the original utility about license. 
- 
-
+Slacker
+For Lazy Penetration Testers
