@@ -54,15 +54,6 @@ Arguments:
 ```
 !help
 ```
-
-
-#Slacker by Team R00T | Korrup
-Notes About Python Version Issues:
-The tools that Slacker utilizes are a combination of Perl, Python2.x, and Python3.x.
-The tool itself is written in Python3.
-Slacker assumes that your python 2.x is called using 'python', and python 3.x is called using 'python3'.
-If you need to have errors, you may need to change this. I would recommend adjusting symlinks.
-
 All Global Arguments Are Set Using ! - All Local Variables Are Set With #
 Tools That Can't Use Local Variables, Such As SQLMap, Will Not Use Global Variables.
 =======
