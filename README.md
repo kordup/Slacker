@@ -54,8 +54,10 @@ Arguments:
 ```
 !help
 ```
+~~~
 All Global Arguments Are Set Using ! - All Local Variables Are Set With #
 Tools That Can't Use Local Variables, Such As SQLMap, Will Not Use Global Variables.
+~~~
 =======
 Slacker
 For Lazy Penetration Testers
