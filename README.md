@@ -15,7 +15,7 @@ OS X & Linux:
 Run install.sh to install *MOST* of the tools used in this tool. 
 then launch slacker.py.
 
-_The Below Assumes You Have Slacker Installed In ~ (Home) Directory. 
+The Below Assumes You Have Slacker Installed In ~ (Home) Directory. 
 
 ```
 sudo chmod +x install.sh && ./install.sh
