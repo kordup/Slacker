@@ -15,7 +15,7 @@ OS X & Linux:
 Run install.sh to install *MOST* of the tools used in this tool. 
 then launch slacker.py.
 
-The Below Assumes You Have Slacker Installed In ~ (Home) Directory. 
+The following lines assume that you have Slacker installed in the ~ (Home) directory. 
 
 ```
 sudo chmod +x install.sh && ./install.sh
@@ -29,27 +29,25 @@ Windows:
 wget linux.distros kthx
 ```
 
-## Usage example
+## How to use Slacker 
 
-How To Use Slacker: 
-
-!target - Set A Global Target
+!target - Set a global target.
 ```
 !target yourdomain.com
 ```
-\#target - Set A One-Time Local Target
+\#target - Set a one-time local target.
 ```
 #target yourdomain.com
 ```
-\#port - Set Local Ports
+\#port - Set local port(s).
 ```
 #port 22
 ```
-\#args - Set Custom Args (Where Applicable)
+\#args - Set custom arguments. (Where applicable)
 ```
 #args -t -p
 ```
-\#help - Get Help From A Tool For Custom Args
+\#help - Get the arguments a tool uses (that specific tools help menu) for the #args command.
 ```
 #help
 ```
@@ -57,10 +55,11 @@ How To Use Slacker:
 ```
 !help
 ```
-~~~
-All Global Arguments Are Set Using ! - All Local Variables Are Set With #
-Tools That Can Not Use Global Variables, Such As SQLMap, Will Not Use Global Variables.
-~~~
-=======
+
+> All Global Arguments Are Set Using ! - All Local Variables Are Set With # 
+> Tools That Can Not Use Global Variables, Such As SQLMap, Will Not Use Global Variables.
+
+
+
 Slacker
 For Lazy Penetration Testers
