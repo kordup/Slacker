@@ -56,9 +56,11 @@ wget linux.distros kthx
 !help
 ```
 
-> All Global Arguments Are Set Using ! - All Local Variables Are Set With # 
+> All global arguments are set using ! - whereas all local arguments are set using # .
 >
-> Tools That Can Not Use Global Variables, Such As SQLMap, Will Not Use Global Variables.
+> Tools that can not use global variables, such as SQLMap, will only utilize local variables. The !target, #target, etc. commands will only assign locally in these conditions.
+>
+> If a tool does not list a local variable (ports, custom arguments, etc), that local variable does not exist for that tool.
 
 
 
