@@ -65,16 +65,15 @@ wget linux.distros kthx
 
 ~~~
  To Do: - [ ] Add More Tools
-              - [ ] HashCat
-              - [ ] Dir Tools
+              - [x] IPGeolocation
               - [ ] Admin Finder
               - [ ] FPing
-              - [ ] IPGeolocation
               - [ ] Crawlers
               - [ ] Admin Page Finder(s)
-              - [ ] Vuln Scanners
               - [ ] Bluetooth Tools
               - [ ] Wifi Tools
+              - [ ] Vuln Scanners
+              - [ ] HashCat
               - [ ] More DoS Tools
         - [ ] Make Source More Windows Friendly
               - [ ] Add A PS Script For Installation

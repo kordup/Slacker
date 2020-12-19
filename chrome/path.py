@@ -1,0 +1,1 @@
+"/home/kodachi/Slacker/chrome/chromebrowser"
