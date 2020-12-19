@@ -63,6 +63,30 @@ wget linux.distros kthx
 > If a tool does not list a local variable (ports, custom arguments, etc), that local variable does not exist for that tool.
 
 
+~~~
+ To Do: - [ ] Add More Tools
+              - [ ] HashCat
+              - [ ] Dir Tools
+              - [ ] Admin Finder
+              - [ ] FPing
+              - [ ] IPGeolocation
+              - [ ] Crawlers
+              - [ ] Admin Page Finder(s)
+              - [ ] Vuln Scanners
+              - [ ] Bluetooth Tools
+              - [ ] Wifi Tools
+              - [ ] More DoS Tools
+        - [ ] Make Source More Windows Friendly
+              - [ ] Add A PS Script For Installation
+              - [ ] Find Alternate Methods of os.system Calls.
+        - [ ] Create Custom Tool Area
+              - [ ] Make Menu Creator
+              - [ ] Make Tool Functionality/Call Creator
+~~~
+
+
+
+
 
 Slacker
 For Lazy Penetration Testers
