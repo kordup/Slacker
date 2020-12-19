@@ -64,7 +64,6 @@ sudo $i -y tor
 sudo $i -y openssh-client 
 sudo $i -y openssh-server 
 
-
 #Readable options
 #Tor Host Option
 clear
@@ -166,6 +165,7 @@ sudo $i -y ruby
 sudo $i -y python2 
 sudo $i -y php 
 sudo $i -y gedit 
+sudo $i -y ruby rubygems 
 sudo $i -y php-curl 
 sudo $i -y snapd
 sudo $i -y libevent-dev 
@@ -178,8 +178,10 @@ sudo $i -y postgresql
 sudo $i -y Nikto
 sudo $i -y Masscan
 sudo $i -y Hashcat
-sudo pip install droopescan wpscan
-
+sudo pip install droopescan
+sudo gem install wpscan
+git clone https://github.com/drego85/JoomlaScan.git
+git clone https://github.com/maldevel/IPGeoLocation.git
 
 
 
