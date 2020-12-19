@@ -63,7 +63,7 @@ wget linux.distros kthx
 > If a tool does not list a local variable (ports, custom arguments, etc), that local variable does not exist for that tool.
 
 
-
+~~~
  To Do: - [ ] Add More Tools
               - [ ] HashCat
               - [ ] Dir Tools
@@ -82,7 +82,7 @@ wget linux.distros kthx
         - [ ] Create Custom Tool Area
               - [ ] Make Menu Creator
               - [ ] Make Tool Functionality/Call Creator
-
+~~~
 
 
 
