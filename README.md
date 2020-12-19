@@ -19,7 +19,7 @@ The Below Assumes You Have Slacker Installed In ~ (Home) Directory.
 
 ```
 sudo chmod +x install.sh && ./install.sh
-sudo ln -s ~/Slacker/slacker.py /usr/bin/slacker
+source ~/.bash_aliases
 slacker
 ```
 

@@ -183,6 +183,9 @@ sudo pip install droopescan
 sudo gem install wpscan
 git clone https://github.com/drego85/JoomlaScan.git
 git clone https://github.com/maldevel/IPGeoLocation.git
+cd ipGeoLocation
+sudo pip install -r requirements.txt
+cd ..
 
 
 
@@ -274,6 +277,7 @@ echo 'alias upd="sudo ufw disable"'>>.bash_aliases
 echo 'alias upe="sudo ufw enable"'>>.bash_aliases
 echo 'alias hostname="sudo cat /var/lib/tor/hidden_service/hostname"'>>.bash_aliases
 echo 'alias ts="sudo -E teamserver $(wget -qO- http://ipecho.net/plain | xargs echo) _hacked"'>>.bash_aliases
+echo "alias slacker='cd ~/Slacker && ./slacker.py'" >> ~/.bash_aliases
 clear
 
 
