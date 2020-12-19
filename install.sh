@@ -183,7 +183,7 @@ sudo pip install droopescan
 sudo gem install wpscan
 git clone https://github.com/drego85/JoomlaScan.git
 git clone https://github.com/maldevel/IPGeoLocation.git
-cd ipGeoLocation
+cd IPGeoLocation
 sudo pip install -r requirements.txt
 cd ..
 
