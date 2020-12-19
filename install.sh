@@ -178,6 +178,7 @@ sudo $i -y postgresql
 sudo $i -y Nikto
 sudo $i -y Masscan
 sudo $i -y Hashcat
+sudo $i -y sqlmap
 sudo pip install droopescan
 sudo gem install wpscan
 git clone https://github.com/drego85/JoomlaScan.git
