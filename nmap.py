@@ -30,7 +30,7 @@ def menu():
     np = mi[:5]
     no = mi[6:]
     na = mi[6:]
-    elif mi == "1":
+    if mi == "1":
         clear()
         os.system('nmap --top-ports 20 ' + target + customArgs)
         menu()
