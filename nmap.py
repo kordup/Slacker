@@ -32,24 +32,24 @@ def menu():
     na = mi[6:]
     if mi == "1":
         clear()
-        os.system('nmap --top-ports 20 ' + target + customArgs)
+        os.system('nmap --top-ports 20 %s %s ' % (target, customArgs))
         menu()
         #clear()
     elif mi == "2":
         clear()
-        os.system('sudo nmap -v -sS -sV ' + target + customArgs)
+        os.system('sudo nmap -v -sS -sV %s %s ' % (target, customArgs))
         menu()
     elif mi == "3":
         clear()
-        os.system('sudo nmap -O ' + target + customArgs)
+        os.system('sudo nmap -O %s %s ' % (target, customArgs))
         menu()
     elif mi == "4":
         clear()
-        os.system('nmap -Pn --script vuln ' + target + customArgs)
+        os.system('nmap -Pn --script vuln %s %s ' % (target, customArgs))
         menu()
     elif mi == "5":
         clear()
-        os.system('sudo nmap ' + target + ' ' + customArgs)
+        os.system('sudo nmap %s %s ' % (target, customArgs))
         menu()
     elif mi == "!":
         vulnscans.menu()
