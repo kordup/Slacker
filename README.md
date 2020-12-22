@@ -26,7 +26,7 @@ slacker
 Windows:
 
 ```
-wget linux.distros kthx
+Use WSL and The Linux Method.
 ```
 
 ## How to use Slacker 
