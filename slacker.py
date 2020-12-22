@@ -7,7 +7,6 @@ import time
 import sqlmap
 import hashc
 import vulnscans
-import cms
 import dos
 import dir
 import re
@@ -28,7 +27,7 @@ def Menus(a):
     if a == 1:
         logo()
         print("What type of trouble are we looking for?")
-        mitems = ("Vulnerability Scans", "Hash Cracking", "DoS", "CMS Vuln Scans", "SQLMap", "Metasploit")
+        mitems = ("Vulnerability Scans", "Hash Cracking", "DoS", "SQLMap", "Metasploit")
         for idx, i in enumerate(mitems, start=1):
             print( BC.G + " [" + BC.F + str(idx) + BC.G + "] " + i)
         else:
@@ -89,17 +88,13 @@ def Menus(a):
         Menus(1)
     elif a == 5:
         clear()
-        cms.start()
+        sqlmap.start()
         Menus(1)
     elif a == 6:
         clear()
-        sqlmap.start()
-        Menus(1)
-    elif a == 7:
-        clear()
         metasploit.start()
         Menus(1)
-    elif a == 8:
+    elif a == 7:
         clear()
         dir.start()
         Menus(1)

@@ -4,6 +4,7 @@ import re
 import time
 import nmap
 import masscan
+import cms
 import ipgeo
 import nikto
 import linecache
@@ -17,7 +18,7 @@ def menu():
     logo()
     mi = print("Vuln Scanners")
     """Social Engineering Tool Kit"""
-    mitems = ("Nmap", "Nikto", "Masscan", "IPGeoLocation")
+    mitems = ("Nmap", "Nikto", "Masscan", "IPGeoLocation", "CMS Scanners")
     for idx, i in enumerate(mitems, start=1):
         print( BC.G + " [" + BC.F + str(idx) + BC.G + "] " + i)
     else:
@@ -41,6 +42,9 @@ def menu():
     elif mi == "4":
         ipgeo.start()
         clear()
+    elif mi == "5":
+        clear()
+        cms.start()
     elif mi == "*":
         clear()
         quit

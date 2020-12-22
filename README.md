@@ -62,6 +62,30 @@ wget linux.distros kthx
 >
 > If a tool does not list a local variable (ports, custom arguments, etc), that local variable does not exist for that tool.
 
+~~~
+ Current Tools: - [ ] Vulnerability Scanners
+                    - [ ] NMap
+                    - [ ] Nikto
+                    - [ ] Masscan
+                    - [ ] IPGeoLocation
+                    - [ ] CMS Scanners
+                          - [ ] Joomscan
+                          - [ ] WPScan
+                          - [ ] Droopescan
+                -  [ ] Hash Crackers
+                    - [ ] pyCrack by Team R00T
+                    - [ ] Hashcat (Coming Soon)
+                -  [ ] DoS
+                    - [ ] TorsHammer
+                    - [ ] The Hulk
+                -  [ ] SQLMap
+                -  [ ] Metasploit
+More Coming Soon!
+      Recomendations Welcomed
+~~~
+
+
+
 
 ~~~
  To Do: - [ ] Add More Tools
